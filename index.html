@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Boss</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body class="light-mode">
+  <div id="loader" class="loader">Loading Study Boss...</div>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="Study Boss Logo" class="logo">
+      <nav>
+        <button onclick="navigateTo('home')">Home</button>
+        <button onclick="navigateTo('register')">Register</button>
+        <button onclick="navigateTo('checklist')">Checklist</button>
+        <button onclick="navigateTo('plans')">Plans</button>
+        <button onclick="navigateTo('admin')">Admin</button>
+        <button onclick="toggleDarkMode()">🌙 / ☀️</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="section active">
+      <div class="hero">
+        <h1>Welcome to <span>Study Boss</span></h1>
+        <p>Your Ultimate Study Partner</p>
+        <button onclick="navigateTo('register')">Start Now</button>
+      </div>
+    </section>
+    <section id="register" class="section">
+      <div class="container">
+        <h2>Register Now</h2>
+        <form id="registerForm">
+          <input type="text" id="fullName" placeholder="Full Name" required>
+          <input type="email" id="email" placeholder="Email Address" required>
+          <input type="tel" id="phone" placeholder="Phone Number" required>
+          <select id="college" required>
+            <option value="">Select College</option>
+            <option value="Nursing">Nursing</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Pharmacy">Pharmacy</option>
+            <option value="Business">Business</option>
+            <option value="Dentistry">Dentistry</option>
+            <option value="Applied Science">Applied Science</option>
+          </select>
+          <select id="level" required>
+            <option value="">Select Level</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+    <section id="checklist" class="section">
+      <div class="container">
+        <h2>Study Checklist</h2>
+        <div class="checklist">
+          <input type="text" id="taskInput" placeholder="Add new task...">
+          <button onclick="addTask()">Add</button>
+          <ul id="taskList"></ul>
+        </div>
+      </div>
+    </section>
+    <section id="plans" class="section">
+      <div class="container">
+        <h2>Choose Your Plan</h2>
+        <div class="plans">
+          <div class="plan-card">
+            <h3>💠 Plan 1</h3>
+            <p>Summaries Only</p>
+            <button onclick="navigateTo('payment')">Subscribe</button>
+          </div>
+          <div class="plan-card">
+            <h3>🔷 Plan 2</h3>
+            <p>Summaries + Customer Support</p>
+            <button onclick="navigateTo('payment')">Subscribe</button>
+          </div>
+          <div class="plan-card">
+            <h3>🔶 Plan 3</h3>
+            <p>Everything Unlocked + Final Exam Prep</p>
+            <button onclick="navigateTo('payment')">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="payment" class="section">
+      <div class="container">
+        <h2>Payment</h2>
+        <form id="paymentForm">
+          <input type="text" placeholder="Name on Card" required>
+          <input type="text" placeholder="Card Number" required>
+          <input type="text" placeholder="Expiry (MM/YY)" required>
+          <input type="text" placeholder="CVV" required>
+          <button type="submit">Pay</button>
+        </form>
+      </div>
+    </section>
+    <section id="admin" class="section">
+      <div class="container">
+        <h2>Admin Dashboard</h2>
+        <input type="text" placeholder="Search by name or email">
+        <div class="admin-controls">
+          <button>Edit User Plan</button>
+          <button>Unlock User Content</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Study Boss. All rights reserved.</p>
+      <p><a href="#">Contact</a> | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+    </div>
+  </footer>
+</body>
+</html>
